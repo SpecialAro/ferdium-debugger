@@ -183,14 +183,15 @@
   </div>
   <p class="settings__help">Changes require restart</p>
 
-  <h2 id="features">Features</h2> @each(feature in keys(log.ferdi.features))
-  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-    <label class="franz-form__toggle {{ log.ferdi.features[feature] ? 'is-active' : '' }}">
-      <div class="franz-form__toggle-button"></div>
-      <input type="checkbox">
-    </label>
-    <label class="franz-form__label">{{ feature }}</label>
-  </div>
+  <h2 id="features">Features</h2> 
+  @each(feature in keys(log.ferdi.features))
+    <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
+      <label class="franz-form__toggle {{ log.ferdi.features[feature] ? 'is-active' : '' }}">
+        <div class="franz-form__toggle-button"></div>
+        <input type="checkbox">
+      </label>
+      <label class="franz-form__label">{{ feature }}</label>
+    </div>
   @endeach
 
   <h2 id="updates">Updates</h2>
