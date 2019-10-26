@@ -5,6 +5,7 @@ const {
 } = use('Validator');
 
 const uuid = require('uuid/v4');
+const osName = require('os-name');
 
 class LogController {
   async create({
@@ -111,6 +112,7 @@ class LogController {
     
     return view.render('log', {
       log: logInfo,
+      os: osName(logInfo.host.platform, logInfo.host.release),
       entry: log,
       created,
 
