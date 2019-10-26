@@ -29,75 +29,83 @@
         </div>
         <div class="sidebar">
           <div>
-            
+
             <ul class="tabs">
               <!-- SERVICES -->
               @!section('services')
             </ul>
 
-          </div><button type="button" class="sidebar__button sidebar__button--workspaces "
-            data-tip="Open workspace drawer (⌘+D)" currentitem="false" id="workspaces"><i class="mdi mdi-view-grid"></i></button><button type="button"
-            class="sidebar__button sidebar__button--settings" data-tip="Settings (⌘+,)" currentitem="false" id="open_settings"><i
-              class="mdi mdi-settings"></i></button>
+          </div>
+          <button type="button" class="sidebar__button sidebar__button--workspaces "
+            data-tip="Open workspace drawer (⌘+D)" currentitem="false" id="workspaces">
+              <i class="mdi mdi-view-grid"></i>
+          </button>
+          <button type="button" class="sidebar__button sidebar__button--settings" data-tip="Settings (⌘+,)"
+            currentitem="false" id="open_settings">
+            <i class="mdi mdi-settings"></i>
+          </button>
           <div class="__react_component_tooltip place-right type-dark " data-id="tooltip"
-            style="left: 368px; top: 719px;">Settings (⌘+,)</div>
+            style="left: 368px; top: 719px;">
+            Settings (⌘+,)
+          </div>
         </div>
         <div class="app__service">
           <div class="services">
             <div class="debug-info">
               <div class="debug-info-header">
-                  <h1>Ferdi Debugger</h1>
-                  <p>
-                    This is the Ferdi Debugger. This is <b>not</b> your real instance of Ferdi - no one can access your personal messages through this portal!
-                  </p>
-                  <p>
-                    This page is used to help us find problems in Ferdi that have occured on your client.
-                  </p>
-                  <p>
-                    Log created on {{ created }}
-                  </p>
+                <h1>Ferdi Debugger</h1>
+                <p>
+                  This is the Ferdi Debugger. This is <b>not</b> your real instance of Ferdi - no one can access your
+                  personal messages through this portal!
+                </p>
+                <p>
+                  This page is used to help us find problems in Ferdi that have occured on your client.
+                </p>
+                <p>
+                  Log created on {{ created }}
+                </p>
               </div>
-              
+
               <h2>Console</h2>
               @each(error in log.ferdi.errors)
-                @if(error.request)
-                  <div class="error_message">
-                    <p>
-                      Error during request: {{ error.request.method }}
-                    </p>
-                    @if(error.request.result)
-                      <p>
-                        Result: {{ json(error.request.result) }}
-                      </p>
-                    @endif
-                    @if(error.response)
-                      <p>
-                        Response: {{ json(error.response) }}
-                      </p>
-                    @endif
-                    @if(error.error)
-                      <p>
-                        Error: {{ json(error.error) }}
-                      </p>
-                    @endif
-                    @if(error.server)
-                      <p>
-                        Server: {{ error.server }}
-                      </p>
-                    @endif
-                  </div>
-                @elseif(error.error)
-                  <div class="error_message">
-                    <p>
-                      Error:
-                    </p>
-                    @each(errorLine in error.error)
-                      <p>
-                        {{ errorLine.replace(/\(created by .*?\)/gi, '$& - ') }}
-                      </p>
-                    @endeach
-                  </div>
+              @if(error.request)
+              <div class="error_message">
+                <p>
+                  Error during request: {{ error.request.method }}
+                </p>
+                @if(error.request.result)
+                <p>
+                  Result: {{ json(error.request.result) }}
+                </p>
                 @endif
+                @if(error.response)
+                <p>
+                  Response: {{ json(error.response) }}
+                </p>
+                @endif
+                @if(error.error)
+                <p>
+                  Error: {{ json(error.error) }}
+                </p>
+                @endif
+                @if(error.server)
+                <p>
+                  Server: {{ error.server }}
+                </p>
+                @endif
+              </div>
+              @elseif(error.error)
+              <div class="error_message">
+                <p>
+                  Error:
+                </p>
+                @each(errorLine in error.error)
+                <p>
+                  {{ errorLine.replace(/\(created by .*?\)/gi, '$& - ') }}
+                </p>
+                @endeach
+              </div>
+              @endif
               @endeach
             </div>
           </div>
@@ -106,25 +114,25 @@
     </div>
   </div>
   <div id="portalContainer" class="hidden">
-    <div><span class="">
-        <div class="settings-wrapper"><button type="button" class="settings-wrapper__action" id="settings_backdrop"></button>
+    <div>
+      <span class="">
+        <div class="settings-wrapper"><button type="button" class="settings-wrapper__action"
+            id="settings_backdrop"></button>
           <div class="settings franz-form">
             <div class="settings-navigation">
               <a href="#" class="settings-navigation__link disabled-link">
                 Available services</a>
               <a href="#" class="settings-navigation__link disabled-link">
-                Your services 
-                  <span class="badge">{{ log.ferdi.services.length }}</span>
-                </a>
+                Your services
+                <span class="badge">{{ log.ferdi.services.length }}</span>
+              </a>
               <a href="#" class="settings-navigation__link disabled-link">
-                Your workspaces 
+                Your workspaces
                 <span class="badge">{{ log.ferdi.workspaces.length }}</span>
               </a>
-              <a href="#"
-                class="settings-navigation__link disabled-link">Account</a>
-              <a href="#"
-                class="settings-navigation__link is-active">Settings</a>
-              </div>
+              <a href="#" class="settings-navigation__link disabled-link">Account</a>
+              <a href="#" class="settings-navigation__link is-active">Settings</a>
+            </div>
             <div class="settings__main">
               <div class="settings__header">
                 <h1>Settings</h1>
@@ -132,10 +140,12 @@
               <div class="settings__body">
                 @!section('settings')
               </div>
-            </div><button type="button" class="settings__close mdi mdi-close" id="close_settings"></button>
+            </div>
+            <button type="button" class="settings__close mdi mdi-close" id="close_settings"></button>
           </div>
         </div>
-      </span></div>
+      </span>
+    </div>
   </div>
 </body>
 
