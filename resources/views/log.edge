@@ -1,0 +1,198 @@
+@layout('layouts.log')
+
+@section('scripts')
+<script>
+  window.darkMode = {{ boolean(log.ferdi.settings.darkMode) ? 'true': 'false' }};
+  window.accentColor = "{{ log.ferdi.settings.accentColor.replace(/\"/g, '') }}";
+</script>
+@endsection
+
+@section('settings')
+<form id="form">
+  <h2 id="general">General</h2>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+    for="autoLaunchOnStart--87" class="franz-form__toggle {{ log.ferdi.settings.autoLaunchOnStart ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="autoLaunchOnStart--87"
+        name="autoLaunchOnStart" value="autoLaunchOnStart" checked="">
+    </label><label class="franz-form__label" for="autoLaunchOnStart--87">Launch Ferdi on start</label>
+  </div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label for="runInBackground--89"
+      class="franz-form__toggle {{ log.ferdi.settings.runInBackground ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="runInBackground--89"
+        name="runInBackground" value="runInBackground" checked="">
+    </label><label class="franz-form__label" for="runInBackground--89">Keep Ferdi in background when
+      closing the window</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="enableSystemTray--90" class="franz-form__toggle {{ log.ferdi.settings.enableSystemTray ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="enableSystemTray--90"
+        name="enableSystemTray" value="enableSystemTray" checked="">
+    </label><label class="franz-form__label" for="enableSystemTray--90">Show Ferdi in system
+      tray</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="privateNotifications--92" class="franz-form__toggle {{ log.ferdi.settings.privateNotifications ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="privateNotifications--92"
+        name="privateNotifications" value="privateNotifications">
+    </label><label class="franz-form__label" for="privateNotifications--92">Don't show message content
+      in notifications</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="showServiceNavigationBar--93" class="franz-form__toggle {{ log.ferdi.settings.showServiceNavigationBar ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="showServiceNavigationBar--93"
+        name="showServiceNavigationBar" value="showServiceNavigationBar">
+    </label><label class="franz-form__label" for="showServiceNavigationBar--93">Always show service
+      navigation bar</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label for="hibernate--94"
+      class="franz-form__toggle {{ log.ferdi.settings.hibernate ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="hibernate--94" name="hibernate"
+        value="hibernate" checked="">
+    </label><label class="franz-form__label" for="hibernate--94">Enable service hibernation</label>
+  </div>
+  <div class="franz-form__field"><label class="franz-form__label" for="hibernationStrategy">Hibernation
+      strategy</label><select id="hibernationStrategy--95" class="franz-form__select">
+      <option>{{ log.ferdi.settings.hibernationStrategy }}seconds</option>
+    </select></div>
+  <div class="franz-form__field">
+    <div class="franz-form__input-wrapper"><input id="server--96" type="text" class="franz-form__input" name="server"
+      placeholder="" value="{{ log.ferdi.settings.server }}" readonly></div><label class="franz-form__label"
+      for="server">Server</label>
+  </div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="keepAllWorkspacesLoaded--114" class="franz-form__toggle {{ log.ferdi.settings.keepAllWorkspacesLoaded ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="keepAllWorkspacesLoaded--114"
+        name="keepAllWorkspacesLoaded" value="keepAllWorkspacesLoaded" checked="">
+    </label><label class="franz-form__label" for="keepAllWorkspacesLoaded--114">Keep all workspaces
+      loaded</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="lockingFeatureEnabled--98" class="franz-form__toggle {{ log.ferdi.settings.lockingFeatureEnabled ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="lockingFeatureEnabled--98"
+        name="lockingFeatureEnabled" value="lockingFeatureEnabled">
+    </label><label class="franz-form__label" for="lockingFeatureEnabled--98">Enable Ferdi password
+      lock</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="scheduledDNDEnabled--100" class="franz-form__toggle {{ log.ferdi.settings.scheduledDNDEnabled ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="scheduledDNDEnabled--100"
+        name="scheduledDNDEnabled" value="scheduledDNDEnabled" checked="">
+    </label><label class="franz-form__label" for="scheduledDNDEnabled--100">Enable scheduled
+      Do-not-Disturb</label></div>
+
+      <h2 id="apperance">Appearance</h2>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="showDisabledServices--103" class="franz-form__toggle {{ log.ferdi.settings.showDisabledServices ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="showDisabledServices--103"
+        name="showDisabledServices" value="showDisabledServices" checked="">
+    </label><label class="franz-form__label" for="showDisabledServices--103">Display disabled services
+      tabs</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="showMessageBadgeWhenMuted--104" class="franz-form__toggle {{ log.ferdi.settings.showMessageBadgeWhenMuted ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="showMessageBadgeWhenMuted--104"
+        name="showMessageBadgeWhenMuted" value="showMessageBadgeWhenMuted" checked="">
+    </label><label class="franz-form__label" for="showMessageBadgeWhenMuted--104">Show unread message
+      badge when notifications are disabled</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label for="darkMode--107"
+      class="franz-form__toggle {{ log.ferdi.settings.darkMode ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="darkMode--107" name="darkMode"
+        value="darkMode" checked="">
+    </label><label class="franz-form__label" for="darkMode--107">Join the Dark Side</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="universalDarkMode--108" class="franz-form__toggle {{ log.ferdi.settings.universalDarkMode ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="universalDarkMode--108"
+        name="universalDarkMode" value="universalDarkMode" checked="">
+    </label><label class="franz-form__label" for="universalDarkMode--108">Enable universal Dark
+      Mode</label></div>
+  <div class="franz-form__field">
+    <div class="franz-form__input-wrapper"><input id="accentColor--109" type="text" class="franz-form__input"
+    name="accentColor" placeholder="" value="{{ log.ferdi.settings.accentColor }}"></div><label class="franz-form__label"
+      for="accentColor">Accent color</label>
+  </div>
+  <h2 id="language">Language</h2>
+  <div class="franz-form__field"><select id="locale--111" class="franz-form__select">
+      <option>{{ log.ferdi.settings.locale }}</option>
+    </select></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="enableSpellchecking--105" class="franz-form__toggle {{ log.ferdi.settings.enableSpellchecking ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="enableSpellchecking--105"
+        name="enableSpellchecking" value="enableSpellchecking" checked="">
+    </label><label class="franz-form__label" for="enableSpellchecking--105">Enable spell
+      checking</label></div>
+  <div class="franz-form__field"><label class="franz-form__label" for="spellcheckerLanguage">Spell
+      checking language</label><select id="spellcheckerLanguage--106" class="franz-form__select">
+      <option value="automatic">{{ log.ferdi.settings.spellcheckerLanguage }}</option>
+    </select></div>
+    
+  <h2 id="advanced">Advanced</h2>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label
+      for="enableGPUAcceleration--110" class="franz-form__toggle {{ log.ferdi.settings.enableGPUAcceleration ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="enableGPUAcceleration--110"
+        name="enableGPUAcceleration" value="enableGPUAcceleration" checked="">
+    </label><label class="franz-form__label" for="enableGPUAcceleration--110">Enable GPU
+      Acceleration</label></div>
+  <p class="settings__help">Changes require restart</p>
+
+  <h2 id="features">Features</h2>
+  @each(feature in keys(log.ferdi.features))
+    <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
+      <label class="franz-form__toggle {{ log.ferdi.features[feature] ? 'is-active' : '' }}">
+        <div class="franz-form__toggle-button"></div>
+        <input type="checkbox">
+      </label>
+      <label class="franz-form__label">{{ feature }}</label>
+    </div>
+  @endeach
+
+  <h2 id="updates">Updates</h2><button class="franz-form__button franz-form__button--secondary" type="button"
+    disabled=""><span class="loadedContent"></span>Search for updates</button><br>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label for="beta--112"
+      class="franz-form__toggle {{ log.ferdi.settings.beta ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="beta--112" name="beta" value="beta">
+    </label><label class="franz-form__label" for="beta--112">Include beta versions</label></div>
+  <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled"><label for="noUpdates--113"
+      class="franz-form__toggle {{ log.ferdi.settings.noUpdates ? 'is-active' : '' }}">
+      <div class="franz-form__toggle-button"></div><input type="checkbox" id="noUpdates--113" name="noUpdates"
+        value="noUpdates" checked="">
+    </label><label class="franz-form__label" for="noUpdates--113">Disable updates</label></div>
+
+    Current version: {{ log.ferdi.version }}<br />
+    Current electron version: {{ log.ferdi.electron }}<br />
+    Platform: {{ log.host.platform }} {{ log.host.release }}
+    
+  <p class="settings__message"><span class="mdi mdi-github-face"></span><span>Ferdi is based on <a
+        href="https://github.com/meetfranz/franz" target="_blank">Franz</a>, a project published under
+      the <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0
+        License</a></span></p>
+</form>
+@endsection
+
+@section('services')
+  @each(service in log.ferdi.services)
+    <li class="tab-item" data-tip="Skype" currentitem="false">
+    <img src="https://cdn.jsdelivr.net/gh/getferdi/recipes/uncompressed/{{ service.recipe }}/icon.png" class="tab-item__icon" alt="">
+      @if(service.isHibernating)
+        <span>
+          <span class="tab-item__message-count hibernating" title="This service is hibernating">•</span>
+        </span>
+      @endif
+      @if(service.isDarkModeEnabled)
+        <span>
+          <span class="tab-item__message-count darkmode" title="This service is in dark mode">•</span>
+        </span>
+      @endif
+      @if(service.hasCrashed)
+        <span>
+          <span class="tab-item__message-count crashed" title="This service has crashed">•</span>
+        </span>
+      @endif
+    </li>
+  @endeach
+@endsection
+
+@section('workspaces')
+  @each(workspace in log.ferdi.workspaces)
+    <div class="WorkspaceDrawerItem-item-0-1-70"><span
+        class="WorkspaceDrawerItem-name-0-1-72">Workspace</span>
+        <span class="WorkspaceDrawerItem-services-0-1-74">
+          @each(service in workspace.services)
+            {{ service }}
+          @endeach
+        </span>
+    </div>
+  @endeach
+@endsection
