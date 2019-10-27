@@ -37,7 +37,7 @@ class LogController {
       'ferdi.installedRecipes': 'required|array',
       'ferdi.devRecipes': 'required|array',
       'ferdi.services': 'required|array',
-      'ferdi.errors': 'required|array',
+      'ferdi.messages': 'required|array',
       'ferdi.workspaces': 'required|array',
       'ferdi.windowSettings': 'required|object',
       'ferdi.windowSettings.width': 'required|integer',

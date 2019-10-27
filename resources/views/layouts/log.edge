@@ -67,45 +67,56 @@
               </div>
 
               <h2>Console</h2>
-              @each(error in log.ferdi.errors)
-              @if(error.request)
-              <div class="error_message">
-                <p>
-                  Error during request: {{ error.request.method }}
-                </p>
-                @if(error.request.result)
-                <p>
-                  Result: {{ json(error.request.result) }}
-                </p>
-                @endif
-                @if(error.response)
-                <p>
-                  Response: {{ json(error.response) }}
-                </p>
-                @endif
-                @if(error.error)
-                <p>
-                  Error: {{ json(error.error) }}
-                </p>
-                @endif
-                @if(error.server)
-                <p>
-                  Server: {{ error.server }}
-                </p>
-                @endif
-              </div>
-              @elseif(error.error)
-              <div class="error_message">
-                <p>
-                  Error:
-                </p>
-                @each(errorLine in error.error)
-                <p>
-                  {{ errorLine.replace(/\(created by .*?\)/gi, '$& - ') }}
-                </p>
-                @endeach
-              </div>
-              @endif
+              @each(message in log.ferdi.messages)
+                <div class="message {{ message.type }}_message">
+                  @if(message.type === 'error')
+                    @if(message.request)
+                      <p>
+                        Error during request: {{ message.request.method }}
+                      </p>
+                      @if(message.request.result)
+                        <p>
+                          Result: {{ json(message.request.result) }}
+                        </p>
+                      @endif
+                      @if(message.response)
+                        <p>
+                          Response: {{ json(message.response) }}
+                        </p>
+                      @endif
+                      @if(message.error)
+                        <p>
+                          Error: {{ json(message.error) }}
+                        </p>
+                      @endif
+                      @if(message.server)
+                        <p>
+                          Server: {{ message.server }}
+                        </p>
+                      @endif
+                    @elseif(message.error)
+                      <p>
+                        Error:
+                      </p>
+                      @each(errorLine in message.error)
+                        <p>
+                          {{ errorLine.replace(/\(created by .*?\)/gi, '$& - ') }}
+                        </p>
+                      @endeach
+                    @endif
+                  @else
+                    <p>
+                      <b>
+                        console.{{ message.type }}:
+                      </b>
+                    </p>
+                    @each(errorLine in message.info.splice(1))
+                      <p>
+                        {{ errorLine }}
+                      </p>
+                    @endeach
+                  @endif
+                </div>
               @endeach
             </div>
           </div>
