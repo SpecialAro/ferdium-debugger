@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./public/logo.png" alt="" width="300"/>  
+    <img src="./logo.svg" alt="" width="300"/>  
 </p>
 
 # ferdi-debug
