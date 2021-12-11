@@ -56,7 +56,7 @@ class LogController {
       'ferdi.settings.beta': 'required|boolean',
       'ferdi.settings.server': 'required|string',
       'ferdi.settings.hibernate': 'required|boolean',
-      'ferdi.features': 'required|object',
+      // 'ferdi.features': 'required|object',
     });
     if (logValidation.fails()) {
       return response.status(401).send({
@@ -109,7 +109,7 @@ class LogController {
     }
 
     const created = new Date(log.created_at).toLocaleDateString();
-    
+
     return view.render('log', {
       log: logInfo,
       os: osName(logInfo.host.platform, logInfo.host.release),
