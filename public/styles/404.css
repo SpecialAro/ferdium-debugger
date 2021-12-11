@@ -43,7 +43,7 @@ p {
   padding-bottom: .85rem;
 }
 
-.header > img {
+.header > a > img {
   margin-right: 2.5rem;
 }
 
