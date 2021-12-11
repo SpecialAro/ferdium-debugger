@@ -183,7 +183,7 @@
   </div>
   <p class="settings__help">Changes require restart</p>
 
-  <h2 id="features">Features</h2> 
+  <h2 id="features">Features</h2>
   @each(feature in keys(log.ferdi.features))
     <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
       <label class="franz-form__toggle {{ log.ferdi.features[feature] ? 'is-active' : '' }}">
@@ -227,7 +227,7 @@
 @section('services')
   @each(service in log.ferdi.services)
     <li class="tab-item" data-tip="Skype" currentitem="false">
-      <img src="https://cdn.jsdelivr.net/gh/getferdi/recipes/uncompressed/{{ service.recipe }}/icon.png"
+      <img src="https://raw.githubusercontent.com/getferdi/recipes/master/recipes/{{ service.recipe }}/icon.svg"
         class="tab-item__icon" alt="">
       @if(service.isHibernating)
         <span>

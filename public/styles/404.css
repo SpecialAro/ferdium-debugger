@@ -7,8 +7,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 300;
   background-image: url("/splash.png");
-  background-color: #EBEBEB;
   color: #414141;
+  height: 100hv;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -19,16 +21,42 @@ body {
 h1 {
   font-size: 70px;
   margin-bottom: 1.5rem;
+  color: #2d3748;
 }
 p {
   margin-bottom: 1rem;
 }
 
+.header, .footer {
+  display: flex;
+  flex-direction: row;
+  background: black;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: .875rem;
+  padding: 1rem;
+}
+
+.footer {
+  padding-top: .85rem;
+  padding-bottom: .85rem;
+}
+
+.header > img {
+  margin-right: 2.5rem;
+}
+
 .content {
+  flex: 1;
   min-width: 100vw;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items:center;
   text-align: center;
+}
+
+.content a {
+  text-decoration: none;
+  color: black;
 }

@@ -10,11 +10,18 @@
   {{ style('styles/404') }}
 </head>
 <body>
+  <div class="header">
+    <img src="https://github.com/getferdi/debugger/raw/master/logo.svg" alt="Ferdi Logo" height="50">
+    <a class="github-button" href="https://github.com/getferdi/debugger" data-icon="octicon-star" aria-label="Star getferdi/debugger on GitHub">Star</a>
+  </div>
   <div class="content">
     <div>
-        <img src="/logo.png" alt="Ferdi Logo" width="200">
       @!section('content')
     </div>
   </div>
+  <div class="footer">
+    2021 © All rights reserved
+  </div>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
