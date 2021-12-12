@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>View log - Ferdi Debugger</title>
+  <title>View log</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" type="image/png" href="/logo.png">
 
@@ -56,20 +56,18 @@
                 <h1>🐞 Debugger</h1>
                 <p>
                   This is <b>not</b> your real instance of Ferdi - no one can access your
-                  personal messages through this portal!
-                </p>
-                <p>
+                  personal messages through this portal!<br/>
                   This page is used to help us find problems in Ferdi that have occured on your client.
                 </p>
                 <p>
-                  Log created on {{ created }}
+                  <em>Log created on {{ created }}</em>
                 </p>
               </div>
 
               <h2>Console</h2>
               @each(message in log.ferdi.messages)
                 <div class="message {{ message.type }}_message">
-                  @if(message.type === 'error')
+                  @if(message.request)
                     @if(message.request)
                       <p>
                         Error during request: {{ message.request.method }}
