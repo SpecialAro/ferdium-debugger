@@ -18,4 +18,8 @@ function sendTestNotification(title = "Test notification title", body = "Test no
   else {
     console.warn(`Failed, notification permission is ${Notification.permission}`);
   }
+
+  if (window.ferdi && window.ferdi.setBadge) {
+    window.ferdi.setBadge(0, 1);
+  }
 }
