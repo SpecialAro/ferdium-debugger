@@ -31,32 +31,32 @@ class LogController {
       'host.platform': 'required|string',
       'host.release': 'required|string',
       'host.screens': 'required|array',
-      ferdi: 'required|object',
-      'ferdi.version': 'required|string',
-      'ferdi.electron': 'required|string',
-      'ferdi.installedRecipes': 'array',
-      'ferdi.devRecipes': 'array',
-      'ferdi.services': 'array',
-      'ferdi.messages': 'array',
-      'ferdi.workspaces': 'array',
-      'ferdi.windowSettings': 'required|object',
-      'ferdi.windowSettings.width': 'required|integer',
-      'ferdi.windowSettings.height': 'required|integer',
-      'ferdi.windowSettings.y': 'required|integer',
-      'ferdi.windowSettings.x': 'required|integer',
-      'ferdi.windowSettings.isMaximized': 'required|boolean',
-      'ferdi.windowSettings.isFullScreen': 'required|boolean',
-      'ferdi.settings': 'required|object',
-      'ferdi.settings.autoLaunchInBackground': 'required|boolean',
-      'ferdi.settings.runInBackground': 'required|boolean',
-      'ferdi.settings.spellcheckerLanguage': 'required|string',
-      'ferdi.settings.locale': 'required|string',
-      'ferdi.settings.darkMode': 'required|boolean',
-      'ferdi.settings.universalDarkMode': 'required|boolean',
-      'ferdi.settings.beta': 'required|boolean',
-      'ferdi.settings.server': 'required|string',
-      'ferdi.settings.hibernate': 'required|boolean',
-      // 'ferdi.features': 'required|object',
+      ferdium: 'required|object',
+      'ferdium.version': 'required|string',
+      'ferdium.electron': 'required|string',
+      'ferdium.installedRecipes': 'array',
+      'ferdium.devRecipes': 'array',
+      'ferdium.services': 'array',
+      'ferdium.messages': 'array',
+      'ferdium.workspaces': 'array',
+      'ferdium.windowSettings': 'required|object',
+      'ferdium.windowSettings.width': 'required|integer',
+      'ferdium.windowSettings.height': 'required|integer',
+      'ferdium.windowSettings.y': 'required|integer',
+      'ferdium.windowSettings.x': 'required|integer',
+      'ferdium.windowSettings.isMaximized': 'required|boolean',
+      'ferdium.windowSettings.isFullScreen': 'required|boolean',
+      'ferdium.settings': 'required|object',
+      'ferdium.settings.autoLaunchInBackground': 'required|boolean',
+      'ferdium.settings.runInBackground': 'required|boolean',
+      'ferdium.settings.spellcheckerLanguage': 'required|string',
+      'ferdium.settings.locale': 'required|string',
+      'ferdium.settings.darkMode': 'required|boolean',
+      'ferdium.settings.universalDarkMode': 'required|boolean',
+      'ferdium.settings.beta': 'required|boolean',
+      'ferdium.settings.server': 'required|string',
+      'ferdium.settings.hibernate': 'required|boolean',
+      // 'ferdium.features': 'required|object',
     });
     if (logValidation.fails()) {
       return response.status(401).send({
@@ -100,11 +100,11 @@ class LogController {
     const logInfo = JSON.parse(log.log);
 
     // Replace Service IDs with recipe names in workspace list
-    for(const workspace in logInfo.ferdi.workspaces) {
-      for (const service in logInfo.ferdi.workspaces[workspace].services) {
-        const s = logInfo.ferdi.workspaces[workspace].services[service];
-        const serviceInfo = logInfo.ferdi.services.find(el => el.id === s);
-        logInfo.ferdi.workspaces[workspace].services[service] = serviceInfo ? serviceInfo.recipe : undefined;
+    for(const workspace in logInfo.ferdium.workspaces) {
+      for (const service in logInfo.ferdium.workspaces[workspace].services) {
+        const s = logInfo.ferdium.workspaces[workspace].services[service];
+        const serviceInfo = logInfo.ferdium.services.find(el => el.id === s);
+        logInfo.ferdium.workspaces[workspace].services[service] = serviceInfo ? serviceInfo.recipe : undefined;
       }
     }
 

@@ -2,8 +2,8 @@
 
 @section('scripts')
 <script>
-  window.darkMode = {{ boolean(log.ferdi.settings.darkMode) ? 'true' : 'false' }};
-  window.accentColor = "{{ log.ferdi.settings.accentColor.replace(/\"/g, '') }}";
+  window.darkMode = {{ boolean(log.ferdium.settings.darkMode) ? 'true' : 'false' }};
+  window.accentColor = "{{ log.ferdium.settings.accentColor.replace(/\"/g, '') }}";
 </script>
 @endsection
 
@@ -12,32 +12,32 @@
   <h2 id="general">General</h2>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="autoLaunchOnStart--87"
-      class="franz-form__toggle {{ log.ferdi.settings.autoLaunchOnStart ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.autoLaunchOnStart ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="autoLaunchOnStart--87" name="autoLaunchOnStart" value="autoLaunchOnStart" checked="">
     </label>
-    <label class="franz-form__label" for="autoLaunchOnStart--87">Launch Ferdi on start</label>
+    <label class="franz-form__label" for="autoLaunchOnStart--87">Launch Ferdium on start</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="runInBackground--89"
-      class="franz-form__toggle {{ log.ferdi.settings.runInBackground ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.runInBackground ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="runInBackground--89" name="runInBackground" value="runInBackground" checked="">
     </label>
-    <label class="franz-form__label" for="runInBackground--89">Keep Ferdi in background when closing the window</label>
+    <label class="franz-form__label" for="runInBackground--89">Keep Ferdium in background when closing the window</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="enableSystemTray--90"
-      class="franz-form__toggle {{ log.ferdi.settings.enableSystemTray ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.enableSystemTray ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="enableSystemTray--90" name="enableSystemTray" value="enableSystemTray" checked="">
     </label>
-    <label class="franz-form__label" for="enableSystemTray--90">Show Ferdi in system tray
+    <label class="franz-form__label" for="enableSystemTray--90">Show Ferdium in system tray
     </label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="privateNotifications--92"
-      class="franz-form__toggle {{ log.ferdi.settings.privateNotifications ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.privateNotifications ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="privateNotifications--92" name="privateNotifications" value="privateNotifications">
     </label>
@@ -45,7 +45,7 @@
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="showServiceNavigationBar--93"
-      class="franz-form__toggle {{ log.ferdi.settings.showServiceNavigationBar ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.showServiceNavigationBar ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="showServiceNavigationBar--93" name="showServiceNavigationBar"
         value="showServiceNavigationBar">
@@ -53,7 +53,7 @@
     <label class="franz-form__label" for="showServiceNavigationBar--93">Always show service navigation bar</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-    <label for="hibernate--94" class="franz-form__toggle {{ log.ferdi.settings.hibernate ? 'is-active' : '' }}">
+    <label for="hibernate--94" class="franz-form__toggle {{ log.ferdium.settings.hibernate ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="hibernate--94" name="hibernate" value="hibernate" checked="">
     </label>
@@ -63,19 +63,19 @@
     <label class="franz-form__label" for="hibernationStrategy">Hibernation strategy
     </label>
     <select id="hibernationStrategy--95" class="franz-form__select">
-      <option>{{ log.ferdi.settings.hibernationStrategy }}seconds</option>
+      <option>{{ log.ferdium.settings.hibernationStrategy }}seconds</option>
     </select>
   </div>
   <div class="franz-form__field">
     <div class="franz-form__input-wrapper">
       <input id="server--96" type="text" class="franz-form__input" name="server" placeholder=""
-        value="{{ log.ferdi.settings.server }}" readonly>
+        value="{{ log.ferdium.settings.server }}" readonly>
     </div>
     <label class="franz-form__label" for="server">Server</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="keepAllWorkspacesLoaded--114"
-      class="franz-form__toggle {{ log.ferdi.settings.keepAllWorkspacesLoaded ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.keepAllWorkspacesLoaded ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="keepAllWorkspacesLoaded--114" name="keepAllWorkspacesLoaded"
         value="keepAllWorkspacesLoaded" checked="">
@@ -85,16 +85,16 @@
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="lockingFeatureEnabled--98"
-      class="franz-form__toggle {{ log.ferdi.settings.lockingFeatureEnabled ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.lockingFeatureEnabled ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="lockingFeatureEnabled--98" name="lockingFeatureEnabled" value="lockingFeatureEnabled">
     </label>
-    <label class="franz-form__label" for="lockingFeatureEnabled--98">Enable Ferdi password lock
+    <label class="franz-form__label" for="lockingFeatureEnabled--98">Enable Ferdium password lock
     </label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="scheduledDNDEnabled--100"
-      class="franz-form__toggle {{ log.ferdi.settings.scheduledDNDEnabled ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.scheduledDNDEnabled ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="scheduledDNDEnabled--100" name="scheduledDNDEnabled" value="scheduledDNDEnabled"
         checked="">
@@ -106,7 +106,7 @@
   <h2 id="apperance">Appearance</h2>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="showDisabledServices--103"
-      class="franz-form__toggle {{ log.ferdi.settings.showDisabledServices ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.showDisabledServices ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="showDisabledServices--103" name="showDisabledServices" value="showDisabledServices"
         checked="">
@@ -116,7 +116,7 @@
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="showMessageBadgeWhenMuted--104"
-      class="franz-form__toggle {{ log.ferdi.settings.showMessageBadgeWhenMuted ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.showMessageBadgeWhenMuted ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="showMessageBadgeWhenMuted--104" name="showMessageBadgeWhenMuted"
         value="showMessageBadgeWhenMuted" checked="">
@@ -125,7 +125,7 @@
       are disabled</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-    <label for="darkMode--107" class="franz-form__toggle {{ log.ferdi.settings.darkMode ? 'is-active' : '' }}">
+    <label for="darkMode--107" class="franz-form__toggle {{ log.ferdium.settings.darkMode ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="darkMode--107" name="darkMode" value="darkMode" checked="">
     </label>
@@ -133,7 +133,7 @@
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="universalDarkMode--108"
-      class="franz-form__toggle {{ log.ferdi.settings.universalDarkMode ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.universalDarkMode ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="universalDarkMode--108" name="universalDarkMode" value="universalDarkMode" checked="">
     </label>
@@ -143,19 +143,19 @@
   <div class="franz-form__field">
     <div class="franz-form__input-wrapper">
       <input id="accentColor--109" type="text" class="franz-form__input" name="accentColor" placeholder=""
-        value="{{ log.ferdi.settings.accentColor }}">
+        value="{{ log.ferdium.settings.accentColor }}">
     </div>
     <label class="franz-form__label" for="accentColor">Accent color</label>
   </div>
   <h2 id="language">Language</h2>
   <div class="franz-form__field">
     <select id="locale--111" class="franz-form__select">
-      <option>{{ log.ferdi.settings.locale }}</option>
+      <option>{{ log.ferdium.settings.locale }}</option>
     </select>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="enableSpellchecking--105"
-      class="franz-form__toggle {{ log.ferdi.settings.enableSpellchecking ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.enableSpellchecking ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="enableSpellchecking--105" name="enableSpellchecking" value="enableSpellchecking"
         checked="">
@@ -166,14 +166,14 @@
   <div class="franz-form__field">
     <label class="franz-form__label" for="spellcheckerLanguage">Spell checking language</label>
     <select id="spellcheckerLanguage--106" class="franz-form__select">
-      <option value="automatic">{{ log.ferdi.settings.spellcheckerLanguage }}</option>
+      <option value="automatic">{{ log.ferdium.settings.spellcheckerLanguage }}</option>
     </select>
   </div>
 
   <h2 id="advanced">Advanced</h2>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
     <label for="enableGPUAcceleration--110"
-      class="franz-form__toggle {{ log.ferdi.settings.enableGPUAcceleration ? 'is-active' : '' }}">
+      class="franz-form__toggle {{ log.ferdium.settings.enableGPUAcceleration ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="enableGPUAcceleration--110" name="enableGPUAcceleration" value="enableGPUAcceleration"
         checked="">
@@ -184,9 +184,9 @@
   <p class="settings__help">Changes require restart</p>
 
   <h2 id="features">Features</h2>
-  @each(feature in keys(log.ferdi.features))
+  @each(feature in keys(log.ferdium.features))
     <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-      <label class="franz-form__toggle {{ log.ferdi.features[feature] ? 'is-active' : '' }}">
+      <label class="franz-form__toggle {{ log.ferdium.features[feature] ? 'is-active' : '' }}">
         <div class="franz-form__toggle-button"></div>
         <input type="checkbox">
       </label>
@@ -199,25 +199,25 @@
       class="loadedContent"></span>Search for updates</button>
   <br>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-    <label for="beta--112" class="franz-form__toggle {{ log.ferdi.settings.beta ? 'is-active' : '' }}">
+    <label for="beta--112" class="franz-form__toggle {{ log.ferdium.settings.beta ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="beta--112" name="beta" value="beta">
     </label>
     <label class="franz-form__label" for="beta--112">Include beta versions</label>
   </div>
   <div class="franz-form__field franz-form__toggle-wrapper franz-form__toggle-disabled">
-    <label for="noUpdates--113" class="franz-form__toggle {{ log.ferdi.settings.noUpdates ? 'is-active' : '' }}">
+    <label for="noUpdates--113" class="franz-form__toggle {{ log.ferdium.settings.noUpdates ? 'is-active' : '' }}">
       <div class="franz-form__toggle-button"></div>
       <input type="checkbox" id="noUpdates--113" name="noUpdates" value="noUpdates" checked="">
     </label>
     <label class="franz-form__label" for="noUpdates--113">Disable updates</label>
   </div>
 
-  Current version: {{ log.ferdi.version }}
-  <br /> Current electron version: {{ log.ferdi.electron }}
+  Current version: {{ log.ferdium.version }}
+  <br /> Current electron version: {{ log.ferdium.electron }}
   <br /> Platform: {{ log.host.platform }} {{ log.host.release }} ({{ os }})
 
-  <p class="settings__message"><span class="mdi mdi-github-face"></span><span>Ferdi is based on <a
+  <p class="settings__message"><span class="mdi mdi-github-face"></span><span>Ferdium is based on <a
         href="https://github.com/meetfranz/franz" target="_blank">Franz</a>, a project published under
       the <a href="https://github.com/meetfranz/franz/blob/master/LICENSE" target="_blank">Apache-2.0
         License</a></span></p>
@@ -225,9 +225,9 @@
 @endsection
 
 @section('services')
-  @each(service in log.ferdi.services)
+  @each(service in log.ferdium.services)
     <li class="tab-item" data-tip="Skype" currentitem="false">
-      <img src="https://raw.githubusercontent.com/getferdi/recipes/master/recipes/{{ service.recipe }}/icon.svg"
+      <img src="https://raw.githubusercontent.com/ferdium/ferdium-recipes/main/recipes/{{ service.recipe }}/icon.svg"
         class="tab-item__icon" alt="">
       @if(service.isHibernating)
         <span>
@@ -249,7 +249,7 @@
 @endsection
 
 @section('workspaces')
-@each(workspace in log.ferdi.workspaces)
+@each(workspace in log.ferdium.workspaces)
   <div class="WorkspaceDrawerItem-item-0-1-70"><span class="WorkspaceDrawerItem-name-0-1-72">Workspace</span>
     <span class="WorkspaceDrawerItem-services-0-1-74">
       @each(service in workspace.services)

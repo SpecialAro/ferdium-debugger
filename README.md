@@ -2,13 +2,13 @@
     <img src="./logo.svg" alt="" width="300"/>  
 </p>
 
-# ferdi-debug
-Webapp to help debug Ferdi issues.
+# ferdium-debug
+Webapp to help debug Ferdium issues.
 
-The Ferdi debugger uses Ferdi's debug information to display a Ferdi-like webinterface in the browser. This webinterface allows us to check your configuration without having to crawl through raw JSON code.
+The Ferdium debugger uses Ferdium's debug information to display a Ferdium-like webinterface in the browser. This webinterface allows us to check your configuration without having to crawl through raw JSON code.
 
-<img alt="Ferdi homescreen" src="./screenshots/0.png">
-<img alt="Ferdi settings" src="./screenshots/1.png">
+<img alt="Ferdium homescreen" src="./screenshots/0.png">
+<img alt="Ferdium settings" src="./screenshots/1.png">
 
 ## Setup
 1. Clone this repository
@@ -25,4 +25,4 @@ The Ferdi debugger uses Ferdi's debug information to display a Ferdi-like webint
     ```
 
 ## License
-ferdi-debug is licensed under the MIT License
+ferdium-debug is licensed under the MIT License

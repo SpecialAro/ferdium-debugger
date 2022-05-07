@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="shortcut icon" type="image/png" href="/logo.png">
 
-  {{--  style('styles/ferdi') --}}
+  {{--  style('styles/ferdium') --}}
   {{-- style('styles/mdi') --}}
   {{ style('styles/log') }}
   {{ script('log') }}
@@ -55,9 +55,9 @@
               <div class="debug-info-header">
                 <h1>🐞 Debugger</h1>
                 <p>
-                  This is <b>not</b> your real instance of Ferdi - no one can access your
+                  This is <b>not</b> your real instance of Ferdium - no one can access your
                   personal messages through this portal!<br/>
-                  This page is used to help us find problems in Ferdi that have occured on your client.
+                  This page is used to help us find problems in Ferdium that have occured on your client.
                 </p>
                 <p>
                   <em>Log created on {{ created }}</em>
@@ -65,7 +65,7 @@
               </div>
 
               <h2>Console</h2>
-              @each(message in log.ferdi.messages)
+              @each(message in log.ferdium.messages)
                 <div class="message {{ message.type }}_message">
                   @if(message.request)
                     @if(message.request)
@@ -133,11 +133,11 @@
                 Available services</a>
               <a href="#" class="settings-navigation__link disabled-link">
                 Your services
-                <span class="badge">{{ log.ferdi.services.length }}</span>
+                <span class="badge">{{ log.ferdium.services.length }}</span>
               </a>
               <a href="#" class="settings-navigation__link disabled-link">
                 Your workspaces
-                <span class="badge">{{ log.ferdi.workspaces.length }}</span>
+                <span class="badge">{{ log.ferdium.workspaces.length }}</span>
               </a>
               <a href="#" class="settings-navigation__link disabled-link">Account</a>
               <a href="#" class="settings-navigation__link is-active">Settings</a>

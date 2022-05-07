@@ -1,15 +1,15 @@
 {
-  "name": "ferdi-debug",
+  "name": "ferdium-debug",
   "version": "1.0.0",
   "adonis-version": "4.1.0",
-  "description": "Webapp to help debug Ferdi issues.",
+  "description": "Webapp to help debug Ferdium issues.",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "test": "node ace test"
   },
   "keywords": [
-    "ferdi"
+    "ferdium"
   ],
   "author": "",
   "license": "MIT",

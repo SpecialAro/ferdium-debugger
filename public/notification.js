@@ -19,7 +19,7 @@ function sendTestNotification(title = "Test notification title", body = "Test no
     console.warn(`Failed, notification permission is ${Notification.permission}`);
   }
 
-  if (window.ferdi && window.ferdi.setBadge) {
-    window.ferdi.setBadge(0, 1);
+  if (window.ferdium && window.ferdium.setBadge) {
+    window.ferdium.setBadge(0, 1);
   }
 }
