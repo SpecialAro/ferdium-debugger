@@ -55,7 +55,7 @@ class LogController {
       'ferdium.settings.universalDarkMode': 'required|boolean',
       'ferdium.settings.beta': 'required|boolean',
       'ferdium.settings.server': 'required|string',
-      'ferdium.settings.hibernate': 'required|boolean',
+      'ferdium.settings.hibernateOnStartup': 'required|boolean',
       // 'ferdium.features': 'required|object',
     });
     if (logValidation.fails()) {
