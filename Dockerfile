@@ -1,4 +1,4 @@
-FROM node:16.14-alpine as build
+FROM node:16.15.0-alpine as build
 
 WORKDIR /debugger-build
 
@@ -7,12 +7,11 @@ RUN apk add --no-cache python3 make gcc g++ libc-dev sqlite-dev
 COPY . /debugger-build
 
 ENV CI=true
-
-RUN npm i -g npm@8.7.0
+RUN NPM_VERSION=$(node -p 'require("./package.json").engines.npm'); npm i -g npm@$NPM_VERSION
 RUN npm ci --build-from-source --sqlite=/usr/local
 
 # ---- RUNTIME IMAGE ----------------------------------------------------------
-FROM node:16.4-alpine
+FROM node:16.15.0-alpine
 
 WORKDIR /app
 LABEL maintainer="ferdium"
